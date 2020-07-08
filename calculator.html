@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>IOL calculator</title>
+	<link rel = "stylesheet" type = "text/css" href = "css/calculator.css" />
+  <script src="./javaScript/calculator.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+</head>
+
+
+<body>
+  <div class="sidebar-container">
+    <div class="imgcontainer">
+        <img src="img/logo.png" alt="Avatar" class="avatar">
+      </div>
+    <ul class="sidebar-navigation">
+      <li class="header">Navigation</li>
+      <li>
+        <a href="index.html">
+          <i class="fa fa-home" aria-hidden="true"></i> Home
+        </a>
+      </li>
+      <!--<li>
+        <a href="#">
+          <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+        </a>
+      </li> -->
+      <li class="header">Menu</li>
+      <li>
+        <a href="patients_list.html">
+          <i class="fa fa-users" aria-hidden="true"></i> Patients
+        </a>
+      </li>
+      <li>
+        <a href="procedures_list.html">
+          <i class="fa fa-cog" aria-hidden="true"></i> Procedures and Treatments
+        </a>
+      </li>
+      <!--<li>
+        <a href="#">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+        </a>
+      </li>-->
+      <li class="header">Tools</li>
+      <li>
+        <a href="calculator.html">
+          <i class="fa fa-users" aria-hidden="true"></i> IOL Calculator
+        </a>
+      </li>
+      <li class="header">Documents</li>
+      <li>
+        <a href="#">
+          <i class="fa fa-users" aria-hidden="true"></i> Clinical Documents
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-users" aria-hidden="true"></i> Notes
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="content-container">
+  
+    <div class="container-fluid">
+      <h1>IOL Calculator</h1>
+      <div class="patients">
+        <!-- Surgeon and Patient Information -->
+        <div class="demography">
+          <div class="">
+            <h3>Surgeon and Patient Information</h3>
+          </div>
+            <label class="name" >Surgeon Name</label>
+            <input id="name" placeholder="full name" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" type="text"/>
+            
+            <label class="date">Date</label>
+            <input id="date" type="date" placeholder="birthday"/>
+
+            <label class="id">Patient ID</label>
+            <input id="id" type="number" pattern="[A-Za-z]{3}" title="9 numbers" maxlength="9" placeholder="id" required/>
+            
+            <label class="age">Age</label>
+            <input id="age" placeholder="age"/>
+
+            <br>
+
+            <label class="eye">Eye Selection</label>
+            <select id="eye" >
+              <optgroup>
+            <option value="1" disabled selected>eye</option>
+              <option value = "1">OD (right)</option>
+              <option value = "2">OS (left)</option>
+            </optgroup>
+            </select>
+
+            <label class="k">K Notation</label>
+            <select id="k" placeholder="K">
+              <optgroup>
+            <option value="" disabled selected>K</option>
+              <option value = "1">D</option>
+              <option value = "2">mm</option>
+            </optgroup>
+            </select>
+          </div>
+          
+          <!-- Keratometry -->
+          <div class="Keratometry">
+            <div class="">
+              <h3>Keratometry Details</h3>
+            </div>  
+
+         <label class="flatk1">Flat K1</label>
+            <input id="flatk1" type="number" placeholder="K1"/>
+
+            <label class="flatk1m">Flat K1 @ Meridian</label>
+            <input id="flatk1m" placeholder="K1 @ Meridian"/>
+
+            <br>
+            <label class="steepk2">Steep K2</label>
+            <input id="steepk2"placeholder="K2"/>
+
+            <label class="steepk2m">Steep K2 @ Meridian</label>
+            <input id="steepk2m" placeholder="K2 @ Meridian"/>
+           </div>
+       
+     <!-- <br>-->
+<!-- Biometry -->
+          <div class="Biometry">
+            <div class="">
+              <h3>Biometry Details</h3>
+            </div>
+            <label class="alength">Axial Length</label>
+            <input id="alength" placeholder="axial length [mm]"/>
+<br>
+<label class="method">Method</label>
+<select id="method" placeholder="method">
+  <optgroup>
+<option value="" disabled selected>method</option>
+  <option value = "1">Optical or Immersion</option>
+  <option value = "2">Ultrasound/Contact</option>
+  <option value = "3">Personalized ACD</option>
+</optgroup>
+</select>
+<br>
+            <label class="A">A constant</label>
+            <input id="A" placeholder="A constant" />
+              </div>
+              
+<!-- Results -->
+          <div class="result">
+            <div class="">
+              <h3>Final results</h3>
+            </div>
+            <label>IOL Power</label>
+            <input id="result"/>
+          
+        </div>
+        <br>
+
+        <div class="wrapper">
+          <button onclick="calc()" class="primary-btn search header-btn text-uppercase mt-10">Calculate</button>
+          <button onclick="clearFields()" class="primary-btn print header-btn text-uppercase mt-10">Clear fields</button>
+      </div>  
+      
+  
+    
+  </div>
+</body>
+</html>

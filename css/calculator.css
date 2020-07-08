@@ -1,0 +1,409 @@
+/*side bar*/
+
+body {
+  background-color: rgb(243, 248, 252);
+}
+
+.sidebar-container {
+  position: fixed;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+  width: 280px;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #174c6d;
+  color: #fff;
+  border-radius: 0 10px 10px 0;
+}
+
+.content-container {
+  padding-left: 250px;
+}
+
+.sidebar-logo {
+  padding: 10px 15px 10px 30px;
+  font-size: 16px;
+  background-color: #1a1a1a;
+}
+
+.sidebar-navigation {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  position: relative;
+}
+
+.sidebar-navigation li {
+  background-color: transparent;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  line-height: 30px;
+}
+
+.sidebar-navigation li a {
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 10px 8px 6px;
+  display: block;
+  color: #fff;
+}
+
+.sidebar-navigation li .fa {
+  margin-right: 20px;
+}
+
+.sidebar-navigation li::before {
+  background-color: #67bc00;
+  position: absolute;
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 3px;
+  z-index: -1;
+}
+
+.sidebar-navigation li:hover::before {
+  width: 100%;
+}
+
+.sidebar-navigation .header {
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #67bc00;
+  padding: 10px 15px 10px 30px;
+}
+
+.sidebar-navigation .header::before {
+  background-color: transparent;
+}
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("../fonts/poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url("../fonts/poppins/Poppins-Bold.ttf");
+}
+
+/*input boxes style*/
+
+#id,
+#health_m,
+#pnum,
+#alength,
+#fax,
+#name,
+#result,
+#country,
+#city,
+#flatk1,
+#method,
+#result {
+  margin-bottom: 30px;
+}
+
+input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+select::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+optgroup {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.id {
+  margin-right: 20px;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+
+.k {
+  margin-left: 5px;
+}
+
+.method {
+  margin-right: 30px;
+  margin-left: 10px;
+}
+
+.alength {
+  margin-right: 10px;
+}
+
+.A {
+  margin-right: 20px;
+}
+
+/* if I want to center the label and input
+  .name{
+    margin-left: 20px;
+  }
+  */
+
+.fax {
+  margin-right: 21px;
+}
+.age {
+  margin-right: 30px;
+  margin-left: 27px;
+}
+
+.steepk2m {
+  margin-right: 2px;
+  margin-left: 0px;
+}
+
+.flatk1 {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.flatk1m {
+  margin-left: 18px;
+  margin-right: 10px;
+}
+
+.steepk2 {
+  margin-right: 0px;
+}
+
+.steepk2m {
+}
+
+.date {
+  margin-left: 10px;
+  margin-right: 30px;
+}
+
+.vuntil {
+  margin-right: 133px;
+}
+
+.pnum {
+  margin-right: 99px;
+}
+
+#pnum,
+#vuntil {
+  font-size: 16px;
+  height: 25px;
+  width: 197px;
+}
+
+input,
+label {
+  font-size: 16px;
+  height: 25px;
+  width: 150px;
+}
+
+select {
+  height: 30px;
+  width: 160px;
+}
+
+/*#method {
+  height: 30px;
+  width: 190px;
+}
+
+#gender,
+#k {
+  font-size: 16px;
+  height: 25px;
+  width: 135px;
+}
+
+#age,
+#flatk1,
+#steepk2 {
+  font-size: 16px;
+  height: 25px;
+  width: 133px;
+}
+
+#alength {
+  font-size: 16px;
+  height: 25px;
+  width: 180px;
+}*/
+
+/*patients details*/
+.demography {
+  background: #d1dee6;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  height: 90%;
+  width: 45%;
+  margin-bottom: 10px;
+  padding-bottom: 32px;
+  padding-left: 30px;
+  margin-right: 20px;
+  margin-left: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  float: left;
+}
+
+h1 {
+  font-weight: 600;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-left: 60px;
+  margin-top: -7px;
+  font-family: "Poppins", sans-serif;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+.Biometry {
+  background: #d1dee6;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  width: 45%;
+  height: 90%;
+  padding-bottom: 25px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-left: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  float: left;
+}
+
+.result {
+  background: #6cb3df;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  width: 48%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  padding-right: 30px;
+  padding-left: 30px;
+  /* margin-left: 0px; */
+  box-sizing: border-box;
+  border-radius: 10px;
+  float: left;
+}
+
+.Keratometry {
+  background: #d1dee6;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  width: 48%;
+  padding-bottom: 95px;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  float: left;
+}
+
+/* search button
+.wrapper {
+  text-align: center;
+  margin-right:540px;
+  margin-left:525px;
+} */
+
+.button {
+  margin-top: 10px;
+
+  background-color: #67bc00; /* Green */
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  /*display: inline-block;*/
+  font-size: 16px;
+}
+.patients p {
+  margin-bottom: 2px;
+}
+
+/*  Search and Print button*/
+
+.primary-btn {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: #76c727;
+}
+.primary-btn {
+  line-height: 42px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 25px;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  position: relative;
+}
+.primary-btn:focus {
+  outline: none;
+}
+.primary-btn span {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  right: 30px;
+  transition: all 0.3s ease 0s;
+}
+.primary-btn:hover {
+  color: #fff;
+}
+.primary-btn:hover span {
+  color: #fff;
+  right: 20px;
+}
+.primary-btn.white {
+  border: 1px solid #fff;
+  color: #fff;
+}
+.primary-btn.white span {
+  color: #fff;
+}
+.primary-btn.white:hover {
+  background: #fff;
+  color: #67bc00;
+}
+.primary-btn.white:hover span {
+  color: #67bc00;
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.primary-btn {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 30px;
+}

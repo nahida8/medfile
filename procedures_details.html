@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Procedures details</title>
+	<link rel = "stylesheet" type = "text/css" href = "css/procedures_details.css" />
+  <script src="./javaScript/calculator.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+</head>
+
+
+<body>
+  <div class="sidebar-container">
+    <div class="imgcontainer">
+        <img src="img/logo.png" alt="Avatar" class="avatar">
+      </div>
+    <ul class="sidebar-navigation">
+      <li class="header">Navigation</li>
+      <li>
+        <a href="index.html">
+          <i class="fa fa-home" aria-hidden="true"></i> Home
+        </a>
+      </li>
+      <!--<li>
+        <a href="#">
+          <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+        </a>
+      </li> -->
+      <li class="header">Menu</li>
+      <li>
+        <a href="patients_list.html">
+          <i class="fa fa-users" aria-hidden="true"></i> Patients
+        </a>
+      </li>
+      <li>
+        <a href="procedures_list.html">
+          <i class="fa fa-cog" aria-hidden="true"></i> Procedures and Treatments
+        </a>
+      </li>
+      <!--<li>
+        <a href="#">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+        </a>
+      </li>-->
+      <li class="header">Tools</li>
+      <li>
+        <a href="calculator.html">
+          <i class="fa fa-users" aria-hidden="true"></i> IOL Calculator
+        </a>
+      </li>
+      <li class="header">Documents</li>
+      <li>
+        <a href="#">
+          <i class="fa fa-users" aria-hidden="true"></i> Clinical Documents
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-users" aria-hidden="true"></i> Notes
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="content-container">
+  
+    <div class="container-fluid">
+      <h1>Procedure Details</h1>
+      <div class="patients">
+        <!-- Physician and Patient Information -->
+        <div class="demography">
+          <div class="">
+            <h3>Physician and Patient Data</h3>
+          </div>
+            <label class="name" >Physician Name</label>
+            <input id="name" placeholder="full name" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" type="text"/>
+            
+            <!--<label class="date">Date</label>
+            <input id="date" type="date" placeholder="birthday"/>-->
+
+            <label class="id">Patient ID</label>
+            <input id="id" type="number" pattern="[A-Za-z]{3}" title="9 numbers" maxlength="9" placeholder="id" required/>
+            
+            <!--<label class="age">Age</label>
+            <input id="age" placeholder="age"/> -->
+
+            <br>
+
+            <label class="eye">Eye Selection</label>
+            <select id="eye" >
+              <optgroup>
+            <option value="1" disabled selected>eye</option>
+              <option value = "1">OD (right)</option>
+              <option value = "2">OS (left)</option>
+            </optgroup>
+            </select>
+
+            <label class="flatk1">Flat K1</label>
+            <input id="flatk1" type="number" placeholder="K1 [D]"/>
+
+            <label class="steepk2">Steep K2</label>
+            <input id="steepk2"placeholder="K2 [D]"/>
+
+            <label class="alength">Axial Length</label>
+            <input id="alength" placeholder="axial length [mm]"/>
+          
+          </div>
+          
+          <!-- Planned Procedure -->
+          <div class="planned">
+            <div class="">
+              <h3>Planned Procedure</h3>
+            </div>  
+
+            <label class="date">Procedure Date</label>
+            <input id="date" type="date" placeholder="date"/>
+
+            <label class="time">Procedure Time:</label>
+            <input type="time" id="time" >
+
+            <label class="pid">Procedure ID</label>
+            <input id="pid" type="number" placeholder="ID"/> 
+<br>
+            <label class="lens">Lens For Transplant</label>
+            <select id="lens" >
+                <optgroup>
+              <option value="1" disabled selected>IOL</option>
+                <option value = "1">OD (right)</option>
+                <option value = "2">OS (left)</option>
+              </optgroup>
+              </select>
+
+              <label class="backup">Backup Lens</label>
+            <select id="backup" >
+                <optgroup>
+              <option value="1" disabled selected>backup</option>
+                <option value = "1">OD (right)</option>
+                <option value = "2">OS (left)</option>
+              </optgroup>
+              </select>
+
+              <label class="power">IOL Power</label>
+            <input id="power" type="number" placeholder="power"/>
+
+            <label class="cyl">Cylinder</label>
+            <input id="cyl" type="number" placeholder="CYL"/> 
+
+            <br>
+
+            <label for="flacs">FLACS Laser</label>
+            <input type="checkbox" id="flacs" value="FLACS Laser">
+
+              <label class="diagnosis">Diagnosis Description and Code</label>
+              <select id="diagnosis">
+                  <optgroup>
+                <option value="1" disabled selected>diagnosis</option>
+                  <option value = "1">OD (right)</option>
+                  <option value = "2">OS (left)</option>
+                </optgroup>
+                </select>
+
+                <br>
+
+                <label>Note:</label>
+<textarea id="note"rows="5" cols="50">
+  </textarea>
+            <br>
+
+            
+              <!--<label class="steepk2">Steep K2</label>
+            <input id="steepk2"placeholder="K2"/>
+
+            <label class="steepk2m">Steep K2 @ Meridian</label>
+            <input id="steepk2m" placeholder="K2 @ Meridian"/>-->
+           </div> 
+       
+     <!-- <br>-->
+<!-- Procedure Location Details -->
+          <div class="location">
+            <div class="">
+              <h3>Procedure Location and Insurance Details</h3>
+            </div>
+
+            <label class="health_m">Health insurance company</label>
+            <select id = "health_m">
+                <optgroup>
+              <option value="" disabled selected>Select company</option>
+              <option value = "1">Clalit Health Services</option>
+              <option value = "2">Maccabi Health Services</option>
+              <option value = "3">Meuhedet Health Services</option>
+              <option value = "4">Leumit Health Services</option>
+              <option value = "4">Harel Insurance Company</option>
+              <option value = "4">Clal Insurance Company</option>
+              <option value = "4">Menorah Insurance Company</option>
+            </optgroup>
+            </select>
+
+            <label class="pnum">Policy number</label>
+            <input id="pnum" type="number" placeholder="policy number"/> 
+
+            <br>
+
+            <label class="pay">Payment</label>
+            <input type="checkbox" id="pay">
+
+            <label class="reference">Payment Reference</label>
+            <input id="reference" type="number" placeholder="reference"/> 
+
+            <br>
+
+            <label class="institution">Medical institution</label>
+            <select id = "institution">
+                <optgroup>
+              <option value="" disabled selected>Select company</option>
+              <option value = "1">Clalit Health Services</option>
+              <option value = "2">Maccabi Health Services</option>
+              <option value = "3">Meuhedet Health Services</option>
+              <option value = "4">Leumit Health Services</option>
+              <option value = "4">Harel Insurance Company</option>
+              <option value = "4">Clal Insurance Company</option>
+              <option value = "4">Menorah Insurance Company</option>
+            </optgroup>
+            </select> 
+
+            <label class="room">Operating room</label>
+            <input id="room" type="number" placeholder="room"/> 
+
+
+              </div>
+              
+        <br>
+
+        <div class="wrapper">
+            <button onclick="addNewProcedure()" class="primary-btn add header-btn text-uppercase mt-10">Add Procedure</button>
+          <button onclick="calc()" class="primary-btn search header-btn text-uppercase mt-10">Search</button>
+          <button onclick="clearFields()" class="primary-btn clear header-btn text-uppercase mt-10">Clear fields</button>
+          
+      </div>  
+      
+  
+    
+  </div>
+</body>
+</html>
+
+<script src="./javaScript/procedureDetails.js"></script>

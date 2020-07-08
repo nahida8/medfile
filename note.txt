@@ -1,0 +1,10 @@
+DONE:
+Patients_list
+Patients_details
+Calculator
+login2
+procedures_details
+
+TO DO:
+index
+procedures_list
