@@ -7,9 +7,9 @@ function calc() {
   var k = document.getElementById("k").value;
 
   var k1 = parseFloat(document.getElementById("flatk1").value);
-  var k1m = parseFloat.getElementById("flatk1m").value;
+  var k1m = parseFloat(document.getElementById("flatk1m").value);
   var k2 = parseFloat(document.getElementById("steepk2").value);
-  var k2m = parseFloat.getElementById("steepk2").value;
+  var k2m = parseFloat(document.getElementById("steepk2").value);
   var age = document.getElementById("age").value;
   var eye = document.getElementById("eye").value;
   var k = document.getElementById("k").value;

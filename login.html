@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Login Page</title>
     <link rel="stylesheet" type="text/css" href="css/login2.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/patients_list.css" /> -->
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
       rel="stylesheet"
@@ -17,12 +18,15 @@
     </div>
     <div class="login-page">
       <form class="login-form">
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button>login</button>
+        <input id="username" type="text" placeholder="Username" />
+        <input id="password" type="password" placeholder="Password" />
+        <button type="button" onclick="login()">login</button>
+        <!-- <a href="index.html" on>Login</a> -->
         <p class="message">Not registered? <a href="#">Create an account</a></p>
         <p class="message">Forgot password? <a href="#">Reset</a></p>
       </form>
     </div>
   </body>
 </html>
+
+<script src="./javaScript/login.js"></script>

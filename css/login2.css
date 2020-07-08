@@ -1,4 +1,3 @@
-
 .login-page {
   margin: auto;
 }
@@ -18,7 +17,7 @@ img.avatar {
 
 .login-form {
   position: relative;
-  background: #FFFFFF;
+  background: #ffffff;
   max-width: 20%;
   padding: 3%;
   z-index: 1;
@@ -29,29 +28,30 @@ img.avatar {
 
 .login-form input {
   background: #f2f2f2;
-  font-family: "Poppins",sans-serif;
-  font-size: 16px; 
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
   width: 100%;
   margin: 0 0 20px;
   padding: 15px;
   outline: 0;
   border: 0;
   box-sizing: border-box;
-  
 }
 .login-form button {
-  font-family:"Poppins",sans-serif;
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background:#76c727;
+  background: #76c727;
   width: 100%;
   border: 0;
   padding: 15px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 14px;
   cursor: pointer;
 }
-.login-form button:hover,.form button:active,.form button:focus {
+.login-form button:hover,
+.form button:active,
+.form button:focus {
   background: #023b5f;
 }
 .login-form .message {
@@ -65,5 +65,5 @@ img.avatar {
 
 body {
   background-color: #023b5f;
-  font-family:"Poppins",sans-serif;     
+  font-family: "Poppins", sans-serif;
 }

@@ -94,5 +94,6 @@ function generateTable(table, data) {
     }
   }
 }
+
 // generateTableHead(table, data);
 // generateTable(table, mountains);

@@ -299,9 +299,103 @@
         <a href="patients_details.html" class="primary-btn print header-btn text-uppercase mt-10">Add New patient</a>
         <!--<button onclick="addRowToTable()" class="button">search</button>-->
     </div>
+
+    <div class="content-container" id="addPatientDiv">
+    <div class="container-fluid">
+      <h1>Patient demographic file</h1>
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="patients">
+        <!-- <div class="demography"> -->
+          
+            <label class="name" >Full name</label>
+            <input id="name" placeholder="first name" pattern="[a-zA-Z]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" type="text"/>
+            <input id="lastName" type="last"  placeholder="last name"/>
+            <!--<br>-->
+            <label class="id">ID</label>
+            <input id="id" type="number" pattern="[A-Za-z]{3}" title="9 numbers" maxlength="9" placeholder="id" required/>
+            <br>
+            <label class="gender">Gender</label>
+            <select id="gender" type="gender" placeholder="gender">
+            <option value="" disabled selected>gender</option>
+              <option value = "1">Female</option>
+              <option value = "2">Male</option>
+              <option value = "3">Non-binary</option>
+            </select>
+            <br>
+
+            <label class="bday">Birthday</label>
+            <input id="bday" type="date" placeholder="birthday"/>
+
+            <label class="age">Age</label>
+            <input id="age" type="age" placeholder="age"/>
+            <br>
+         <!-- </div> -->
+
+          <!--<div class="hmo">-->
+            <label class="health_m">Health insurance company</label>
+            <select id = "health_m">
+              <option value="" disabled selected>Select company</option>
+              <option value = "1">Clalit Health Services</option>
+              <option value = "2">Maccabi Health Services</option>
+              <option value = "3">Meuhedet Health Services</option>
+              <option value = "4">Leumit Health Services</option>
+              <option value = "4">Harel Insurance Company</option>
+              <option value = "4">Clal Insurance Company</option>
+              <option value = "4">Menorah Insurance Company</option>
+            </select>
+
+            <label class="pnum">Policy number</label>
+            <input id="pnum" type="pnum" placeholder="policy number"/>
+
+            <br>
+            <label class="vuntil">Valid until</label>
+             <input id="vuntil" type="date" placeholder="date"/>
+           <!-- </div> -->
+       
+      <br>
+
+          <!--<div class="connection">-->
+            <label class="mobile">Mobile number</label>
+            <input id="mobile" type="mobile" placeholder="mobile number"/>
+            <input id="mobile2" type="mobile" placeholder="mobile number" display="inline"/>
+<br>
+            <label class="fax">Fax number</label>
+            <input id="fax" type="number" placeholder="fax number"/>
+<!--<br>-->
+            <label class="email">Email address</label>
+            <input type="email" id="email" placeholder="email"/>
+              <!-- </div> -->
+              <br>
+          <!--<div class="address">-->
+            <label for="country">Country</label>  
+            <select id="country" class="country" name="country" placeholder="country">
+              <option value="" disabled selected>Select country</option>
+              <option value="Afghanistan">Afghanistan</option>
+              <option value="Åland Islands">Åland Islands</option>              
+          </select>                   
+            <label class="city">City</label>
+            <input id="city" type="city" placeholder="city"/>
+<br>
+            <label class="location_address">Address</label>
+            <input id="address" type="address" placeholder="address"/>
+            <!--<br>-->
+            <label class="zip">Zip code</label>
+            <input id="zip" type="zip" placeholder="zip code"/>
+          
+        </div>
+        <br>
+        <div class="wrapper">
+          <a href="#" class="primary-btn search header-btn text-uppercase mt-10">Search</a>
+          <button onclick="addNewPatient()" class="primary-btn print header-btn text-uppercase mt-10">Add New Patient</button>
+      </div> 
+      
+      
+    </div>
       
   
     
   </div>
 </body>
 </html>
+
+<script src="./javaScript/patientsDetails.js"></script>
