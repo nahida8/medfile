@@ -15,7 +15,7 @@ let patients = [
     age: "31",
     mobile: "052-000-1511",
     email: "karin.kakunda@s.afeka.ac.il",
-    healthInsurance: "Macabi",
+    healthInsurance: "Meuhedet",
   },
   {
     firstName: "Shalom",
@@ -24,7 +24,7 @@ let patients = [
     age: "31",
     mobile: "052-000-2422",
     email: "shalom.mendel@s.afeka.ac.il",
-    healthInsurance: "Macabi",
+    healthInsurance: "Leumit",
   },
   {
     firstName: "Mark",
@@ -42,7 +42,25 @@ let patients = [
     age: "31",
     mobile: "052-000-4844",
     email: "sanad.satel@s.afeka.ac.il",
-    healthInsurance: "Macabi",
+    healthInsurance: "Leumit",
+  },
+  {
+    firstName: "Nahida",
+    lastName: "Sakis",
+    id: "208520963",
+    age: "31",
+    mobile: "052-000-0200",
+    email: "nahida.sakis@s.afeka.ac.il",
+    healthInsurance: "Clalit",
+  },
+  {
+    firstName: "karin",
+    lastName: "Kakunda",
+    id: "208520963",
+    age: "31",
+    mobile: "052-000-1511",
+    email: "karin.kakunda@s.afeka.ac.il",
+    healthInsurance: "Menorah",
   },
 ];
 

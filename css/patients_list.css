@@ -100,7 +100,6 @@ body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  margin-bottom: 30px;
 }
 
 body,
@@ -134,6 +133,7 @@ h4,
 h5,
 h6 {
   padding-top: 40px;
+  padding-bottom: 40px;
   padding-left: 80px;
   font-weight: 600;
 }
@@ -155,6 +155,7 @@ select {
   font-size: 16px;
   height: 25px;
   width: 200px;
+  margin-bottom: 30px;
 }
 
 textarea {
@@ -257,7 +258,7 @@ iframe {
 }
 
 .wrap-table100 {
-  width: 1000px;
+  width: 1100px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -486,6 +487,7 @@ iframe {
 .primary-btn {
   padding-left: 30px;
   padding-right: 30px;
+  margin-top: 10px;
   margin-left: 30px;
 }
 
