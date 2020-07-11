@@ -1,47 +1,47 @@
 let patients = [
   {
-    firstName: "Vincent",
-    lastName: "Williamson",
+    firstName: "Nahida",
+    lastName: "Sakis",
+    id: "208520963",
     age: "31",
-    surgeryDate: "13-Nov-2020",
-    surgeryId: "10-32",
-    treatment: "200",
+    mobile: "052-000-0200",
+    email: "nahida.sakis@s.afeka.ac.il",
     healthInsurance: "Macabi",
   },
   {
-    firstName: "Vincent",
-    lastName: "Williamson",
+    firstName: "karin",
+    lastName: "Kakunda",
+    id: "208520963",
     age: "31",
-    surgeryDate: "13-Nov-2020",
-    surgeryId: "10-32",
-    treatment: "200",
+    mobile: "052-000-1511",
+    email: "karin.kakunda@s.afeka.ac.il",
     healthInsurance: "Macabi",
   },
   {
-    firstName: "Vincent",
-    lastName: "Williamson",
+    firstName: "Shalom",
+    lastName: "Mendel",
+    id: "208520963",
     age: "31",
-    surgeryDate: "13-Nov-2020",
-    surgeryId: "10-32",
-    treatment: "200",
+    mobile: "052-000-2422",
+    email: "shalom.mendel@s.afeka.ac.il",
     healthInsurance: "Macabi",
   },
   {
-    firstName: "Vincent",
-    lastName: "Williamson",
+    firstName: "Mark",
+    lastName: "Morcos",
+    id: "208520963",
     age: "31",
-    surgeryDate: "13-Nov-2020",
-    surgeryId: "10-32",
-    treatment: "200",
+    mobile: "052-000-3373",
+    email: "mark.morcos@s.afeka.ac.il",
     healthInsurance: "Macabi",
   },
   {
     firstName: "sanad",
     lastName: "satel",
+    id: "208520963",
     age: "31",
-    surgeryDate: "13-Nov-2020",
-    surgeryId: "10-32",
-    treatment: "200",
+    mobile: "052-000-4844",
+    email: "sanad.satel@s.afeka.ac.il",
     healthInsurance: "Macabi",
   },
 ];
@@ -51,10 +51,10 @@ function addPatients() {
     addRowToTable(
       p.firstName,
       p.lastName,
+      p.id,
       p.age,
-      p.surgeryDate,
-      p.surgeryId,
-      p.treatment,
+      p.mobile,
+      p.email,
       p.healthInsurance
     )
   );
@@ -98,13 +98,13 @@ function addNewPatient() {
   if (
     firstName !== "" &&
     lastName !== "" &&
-    age !== "" &&
-    validity !== "" &&
     id !== "" &&
-    policy !== "" &&
+    age !== "" &&
+    mobile !== "" &&
+    email !== "" &&
     company !== ""
   )
-    addRowToTable(firstName, lastName, age, validity, id, policy, company);
+    addRowToTable(firstName, lastName, id, age, mobile, email, company);
   clearPatientDetails();
   openAddPatientSection();
 }
@@ -112,10 +112,10 @@ function addNewPatient() {
 function addRowToTable(
   firstName,
   lastName,
+  id,
   age,
-  surgeryDate,
-  surgeryId,
-  treatment,
+  mobile,
+  email,
   healthInsurance
 ) {
   let row = document.createElement("div");
@@ -123,42 +123,42 @@ function addRowToTable(
 
   let firstNameCell = document.createElement("div");
   let lastNameCell = document.createElement("div");
+  let idCell = document.createElement("div");
   let ageCell = document.createElement("div");
-  let surgeryDateCell = document.createElement("div");
-  let surgeryIdCell = document.createElement("div");
-  let treatmentCell = document.createElement("div");
+  let mobileCell = document.createElement("div");
+  let emailCell = document.createElement("div");
   let healthInsuranceCell = document.createElement("div");
 
   let firstNameContent = document.createTextNode(firstName);
   let lastNameContent = document.createTextNode(lastName);
+  let idContent = document.createTextNode(id);
   let ageContent = document.createTextNode(age);
-  let surgeryDateContent = document.createTextNode(surgeryDate);
-  let surgeryIdContent = document.createTextNode(surgeryId);
-  let treatmentContent = document.createTextNode(treatment);
+  let mobileContent = document.createTextNode(mobile);
+  let emailContent = document.createTextNode(email);
   let healthInsuranceContent = document.createTextNode(healthInsurance);
 
   firstNameCell.appendChild(firstNameContent);
   lastNameCell.appendChild(lastNameContent);
+  idCell.appendChild(idContent);
   ageCell.appendChild(ageContent);
-  surgeryDateCell.appendChild(surgeryDateContent);
-  surgeryIdCell.appendChild(surgeryIdContent);
-  treatmentCell.appendChild(treatmentContent);
+  mobileCell.appendChild(mobileContent);
+  emailCell.appendChild(emailContent);
   healthInsuranceCell.appendChild(healthInsuranceContent);
 
   firstNameCell.classList.add("cell");
   lastNameCell.classList.add("cell");
+  idCell.classList.add("cell");
   ageCell.classList.add("cell");
-  surgeryDateCell.classList.add("cell");
-  surgeryIdCell.classList.add("cell");
-  treatmentCell.classList.add("cell");
+  mobileCell.classList.add("cell");
+  emailCell.classList.add("cell");
   healthInsuranceCell.classList.add("cell");
 
   row.appendChild(firstNameCell);
   row.appendChild(lastNameCell);
+  row.appendChild(idCell);
   row.appendChild(ageCell);
-  row.appendChild(surgeryDateCell);
-  row.appendChild(surgeryIdCell);
-  row.appendChild(treatmentCell);
+  row.appendChild(mobileCell);
+  row.appendChild(emailCell);
   row.appendChild(healthInsuranceCell);
 
   document.getElementById("mainDiv").appendChild(row);

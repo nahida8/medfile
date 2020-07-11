@@ -100,6 +100,7 @@ body {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  margin-bottom: 30px;
 }
 
 body,
@@ -148,10 +149,12 @@ li {
 }
 
 /* ------------------------------------ */
-input {
-  display: block;
-  outline: none;
-  border: none !important;
+
+input,
+select {
+  font-size: 16px;
+  height: 25px;
+  width: 200px;
 }
 
 textarea {
@@ -162,6 +165,57 @@ textarea {
 textarea:focus,
 input:focus {
   border-color: transparent !important;
+}
+
+.id {
+  margin-left: 150px;
+  margin-top: 0px;
+}
+
+.gender {
+  margin-right: 20px;
+  margin-top: 0px;
+}
+
+.bday {
+  margin-right: 10px;
+}
+
+.age {
+  margin-left: 350px;
+}
+
+.health_m {
+  margin-right: 20px;
+  margin-top: 0px;
+}
+
+.pnum {
+  margin-right: 10px;
+  margin-left: 100px;
+}
+
+.vuntil {
+  margin-right: 1px;
+}
+
+.fax {
+  margin-right: 21px;
+}
+
+.email {
+  margin-left: 220px;
+  margin-top: 0px;
+}
+
+.city {
+  margin-left: 360px;
+  margin-top: 0px;
+}
+
+.zip {
+  margin-left: 310px;
+  margin-top: 0px;
 }
 
 /* ------------------------------------ */
@@ -203,7 +257,7 @@ iframe {
 }
 
 .wrap-table100 {
-  width: 960px;
+  width: 1000px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -292,32 +346,32 @@ iframe {
 }
 
 .row .cell:nth-child(1) {
-  width: 150px;
+  width: 130px;
   padding-left: 30px;
 }
 
 .row .cell:nth-child(2) {
-  width: 130px;
+  width: 120px;
 }
 
 .row .cell:nth-child(3) {
-  width: 60px;
+  width: 120px;
 }
 
 .row .cell:nth-child(4) {
-  width: 135px;
+  width: 60px;
 }
 
 .row .cell:nth-child(5) {
-  width: 100px;
+  width: 120px;
 }
 
 .row .cell:nth-child(6) {
-  width: 100px;
+  width: 90px;
 }
 
 .row .cell:nth-child(7) {
-  width: 140px;
+  width: 100px;
 }
 
 .table,
@@ -432,6 +486,11 @@ iframe {
 .primary-btn {
   padding-left: 30px;
   padding-right: 30px;
+  margin-left: 30px;
+}
+
+.search {
+  margin-left: 525px;
 }
 
 .patients {
