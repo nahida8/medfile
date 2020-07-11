@@ -154,6 +154,10 @@ optgroup {
   margin-right: 20px;
 }
 
+.pid {
+  margin-left: 15px;
+}
+
 /* if I want to center the label and input
     .name{
       margin-left: 20px;
