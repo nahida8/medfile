@@ -433,3 +433,9 @@ iframe {
   padding-left: 30px;
   padding-right: 30px;
 }
+
+.patients {
+  margin: auto;
+  width: 80%;
+  padding: 11px;
+}

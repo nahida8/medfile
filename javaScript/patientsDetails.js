@@ -1,99 +1,187 @@
-function addNewPatient() {
-  var firstName = document.getElementById("name").value;
-  var lastName = document.getElementById("lastName").value;
-  var id = document.getElementById("id").value;
-  var gender = document.getElementById("gender").value;
-  var birthday = document.getElementById("bday").value;
-  var age = document.getElementById("age").value;
-  var company = document.getElementById("health_m").value;
-  var policy = document.getElementById("pnum").value;
-  var validity = document.getElementById("vuntil").value;
-  var mobile = document.getElementById("mobile").value;
-  var second_mobile = document.getElementById("mobile2").value;
-  var fax = document.getElementById("fax").value;
-  var email = document.getElementById("email").value;
-  var country = document.getElementById("country").value;
-  var city = document.getElementById("city").value;
-  var address = document.getElementById("address").value;
-  var zip = document.getElementById("zip").value;
-
-  var patient = {
-    firstName: firstName,
-    lastName: lastName,
-    id: id,
-    gender: gender,
-    birthday: birthday,
-    age: age,
-  };
-
-  var healthinsurance = {
-    company: company,
-    policy: policy,
-    validity: validity,
-  };
-
-  var connection = {
-    mobile: mobile,
-    second_mobile: second_mobile,
-    fax: fax,
-    email: email,
-    country: country,
-    city: city,
-    address: address,
-    zip: zip,
-  };
-
-  console.log(patient);
-  console.log(healthinsurance);
-  console.log(connection);
-  //addRowToTable();
-}
-
-// function addRowToTable() {
-//     var divElement = document
-//       .getElementById("iframeId")
-//       .contentWindow.document.getElementById("mainDiv");
-
-//   document.getElementById("targetParentId").appendChild(divElement);
-//   var element = document.createElement("div");
-//   element.appendChild(
-//     document.createTextNode("The man who mistook his wife for a hat")
-//   );
-//   divElement.appendChild(element);
-//   window.location.href = "patients_list.html";
-// }
-
-let table = document.querySelector("table");
-let mountains = [
-  { name: "Monte Falco", height: 1658, place: "Parco Foreste Casentinesi" },
-  { name: "Monte Falterona", height: 1654, place: "Parco Foreste Casentinesi" },
-  { name: "Poggio Scali", height: 1520, place: "Parco Foreste Casentinesi" },
-  { name: "Pratomagno", height: 1592, place: "Parco Foreste Casentinesi" },
-  { name: "Monte Amiata", height: 1738, place: "Siena" },
+let patients = [
+  {
+    firstName: "Vincent",
+    lastName: "Williamson",
+    age: "31",
+    surgeryDate: "13-Nov-2020",
+    surgeryId: "10-32",
+    treatment: "200",
+    healthInsurance: "Macabi",
+  },
+  {
+    firstName: "Vincent",
+    lastName: "Williamson",
+    age: "31",
+    surgeryDate: "13-Nov-2020",
+    surgeryId: "10-32",
+    treatment: "200",
+    healthInsurance: "Macabi",
+  },
+  {
+    firstName: "Vincent",
+    lastName: "Williamson",
+    age: "31",
+    surgeryDate: "13-Nov-2020",
+    surgeryId: "10-32",
+    treatment: "200",
+    healthInsurance: "Macabi",
+  },
+  {
+    firstName: "Vincent",
+    lastName: "Williamson",
+    age: "31",
+    surgeryDate: "13-Nov-2020",
+    surgeryId: "10-32",
+    treatment: "200",
+    healthInsurance: "Macabi",
+  },
+  {
+    firstName: "sanad",
+    lastName: "satel",
+    age: "31",
+    surgeryDate: "13-Nov-2020",
+    surgeryId: "10-32",
+    treatment: "200",
+    healthInsurance: "Macabi",
+  },
 ];
-let data = Object.keys(mountains[0]);
-function generateTableHead(table, data) {
-  let thead = table.createTHead();
 
-  let row = thead.insertRow();
-  for (let key of data) {
-    let th = document.createElement("th");
-    let text = document.createTextNode(key);
-    th.appendChild(text);
-    row.appendChild(th);
+function addPatients() {
+  patients.map((p) =>
+    addRowToTable(
+      p.firstName,
+      p.lastName,
+      p.age,
+      p.surgeryDate,
+      p.surgeryId,
+      p.treatment,
+      p.healthInsurance
+    )
+  );
+}
+
+function openAddPatientSection() {
+  let patientsList = document.getElementById("patientsList");
+  let addPatientDiv = document.getElementById("addPatientDiv");
+  if (patientsList.style.display === "none") {
+    patientsList.style.display = "block";
+  } else {
+    patientsList.style.display = "none";
+  }
+
+  if (addPatientDiv.style.display === "none") {
+    addPatientDiv.style.display = "block";
+  } else {
+    addPatientDiv.style.display = "none";
   }
 }
 
-function generateTable(table, data) {
-  for (let element of data) {
-    let row = table.insertRow();
-    for (key in element) {
-      let cell = row.insertCell();
-      let text = document.createTextNode(element[key]);
-      cell.appendChild(text);
-    }
-  }
+function addNewPatient() {
+  let firstName = document.getElementById("name").value;
+  let lastName = document.getElementById("lastName").value;
+  let id = document.getElementById("id").value;
+  let gender = document.getElementById("gender").value;
+  let birthday = document.getElementById("bday").value;
+  let age = document.getElementById("age").value;
+  let company = document.getElementById("health_m").value;
+  let policy = document.getElementById("pnum").value;
+  let validity = document.getElementById("vuntil").value;
+  let mobile = document.getElementById("mobile").value;
+  let second_mobile = document.getElementById("mobile2").value;
+  let fax = document.getElementById("fax").value;
+  let email = document.getElementById("email").value;
+  let country = document.getElementById("country").value;
+  let city = document.getElementById("city").value;
+  let address = document.getElementById("address").value;
+  let zip = document.getElementById("zip").value;
+
+  if (
+    firstName !== "" &&
+    lastName !== "" &&
+    age !== "" &&
+    validity !== "" &&
+    id !== "" &&
+    policy !== "" &&
+    company !== ""
+  )
+    addRowToTable(firstName, lastName, age, validity, id, policy, company);
+  clearPatientDetails();
+  openAddPatientSection();
 }
 
-// generateTableHead(table, data);
-// generateTable(table, mountains);
+function addRowToTable(
+  firstName,
+  lastName,
+  age,
+  surgeryDate,
+  surgeryId,
+  treatment,
+  healthInsurance
+) {
+  let row = document.createElement("div");
+  row.classList.add("row");
+
+  let firstNameCell = document.createElement("div");
+  let lastNameCell = document.createElement("div");
+  let ageCell = document.createElement("div");
+  let surgeryDateCell = document.createElement("div");
+  let surgeryIdCell = document.createElement("div");
+  let treatmentCell = document.createElement("div");
+  let healthInsuranceCell = document.createElement("div");
+
+  let firstNameContent = document.createTextNode(firstName);
+  let lastNameContent = document.createTextNode(lastName);
+  let ageContent = document.createTextNode(age);
+  let surgeryDateContent = document.createTextNode(surgeryDate);
+  let surgeryIdContent = document.createTextNode(surgeryId);
+  let treatmentContent = document.createTextNode(treatment);
+  let healthInsuranceContent = document.createTextNode(healthInsurance);
+
+  firstNameCell.appendChild(firstNameContent);
+  lastNameCell.appendChild(lastNameContent);
+  ageCell.appendChild(ageContent);
+  surgeryDateCell.appendChild(surgeryDateContent);
+  surgeryIdCell.appendChild(surgeryIdContent);
+  treatmentCell.appendChild(treatmentContent);
+  healthInsuranceCell.appendChild(healthInsuranceContent);
+
+  firstNameCell.classList.add("cell");
+  lastNameCell.classList.add("cell");
+  ageCell.classList.add("cell");
+  surgeryDateCell.classList.add("cell");
+  surgeryIdCell.classList.add("cell");
+  treatmentCell.classList.add("cell");
+  healthInsuranceCell.classList.add("cell");
+
+  row.appendChild(firstNameCell);
+  row.appendChild(lastNameCell);
+  row.appendChild(ageCell);
+  row.appendChild(surgeryDateCell);
+  row.appendChild(surgeryIdCell);
+  row.appendChild(treatmentCell);
+  row.appendChild(healthInsuranceCell);
+
+  document.getElementById("mainDiv").appendChild(row);
+}
+
+function clearPatientDetails() {
+  document.getElementById("name").value = "";
+  document.getElementById("lastName").value = "";
+  document.getElementById("id").value = "";
+  document.getElementById("gender").value = "";
+  document.getElementById("bday").value = "";
+  document.getElementById("age").value = "";
+  document.getElementById("health_m").value = "";
+  document.getElementById("pnum").value = "";
+  document.getElementById("vuntil").value = "";
+  document.getElementById("mobile").value = "";
+  document.getElementById("mobile2").value = "";
+  document.getElementById("fax").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("country").value = "";
+  document.getElementById("city").value = "";
+  document.getElementById("address").value = "";
+  document.getElementById("zip").value = "";
+}
+
+addPatients();
