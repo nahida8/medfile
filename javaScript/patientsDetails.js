@@ -64,19 +64,29 @@ let patients = [
   },
 ];
 
-function addPatients() {
-  patients.map((p) =>
+const getPatients = async () => {
+  const response = await fetch(
+    "http://localhost:3000/api/Patients/getPatients"
+  );
+  const patientRes = await response.json(); //extract JSON from the http response
+
+  return patientRes;
+};
+
+const addPatients = async () => {
+  const res = await getPatients();
+  res.map((p) =>
     addRowToTable(
-      p.firstName,
-      p.lastName,
-      p.id,
+      p.fNAME,
+      p.lNAME,
+      p.ID,
       p.age,
-      p.mobile,
-      p.email,
-      p.healthInsurance
+      p.MobileNum,
+      p.EmailAddress,
+      p.HealthInsuranceCompany
     )
   );
-}
+};
 
 function openAddPatientSection() {
   let patientsList = document.getElementById("patientsList");
