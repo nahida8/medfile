@@ -73,6 +73,34 @@ const getPatients = async () => {
   return patientRes;
 };
 
+const addPatient = async (patient) => {
+  const response = await fetch(
+    "http://localhost:3000/api/Patients/addPatient",
+    {
+      method: "POST",
+      body: patient, // string or object
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  const myJson = await response.json(); //extract JSON from the http response
+  // do something with myJson
+};
+
+//DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO
+const addDemo = async (demoDetails) => {
+  const response = await fetch("http://localhost:3000/api/Patients/addDemo", {
+    method: "POST",
+    body: demoDetails, // string or object
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const myJson = await response.json(); //extract JSON from the http response
+  // do something with myJson
+};
+
 const addPatients = async () => {
   const res = await getPatients();
   res.map((p) =>
@@ -131,8 +159,33 @@ function addNewPatient() {
     mobile !== "" &&
     email !== "" &&
     company !== ""
-  )
+  ) {
+    let patient = {
+      gender: gender,
+      birth: birthday,
+      age: age,
+      HealthInsuranceCompany: company,
+      PolicyNumber: policy,
+      validUntil: validity,
+      MobileNum: mobile,
+      FaxNum: fax,
+      EmailAddress: email,
+      Country: country,
+      city: city,
+      Address: address,
+      zipCode: zip,
+      ID: id,
+    };
+
+    let demoDetails = {
+      fName: firstName,
+      lName: lastName,
+      ID: id,
+    };
+    addDemo(JSON.stringify(demoDetails));
+    addPatient(JSON.stringify(patient));
     addRowToTable(firstName, lastName, id, age, mobile, email, company);
+  }
   clearPatientDetails();
   openAddPatientSection();
 }
