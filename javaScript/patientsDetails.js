@@ -1,4 +1,4 @@
-let patients = [
+/*let patients = [
   {
     firstName: "Nahida",
     lastName: "Sakis",
@@ -62,7 +62,7 @@ let patients = [
     email: "karin.kakunda@s.afeka.ac.il",
     healthInsurance: "Menorah",
   },
-];
+]; */
 
 const getPatients = async () => {
   const response = await fetch(
@@ -184,7 +184,7 @@ function addNewPatient() {
     };
     addDemo(JSON.stringify(demoDetails));
     addPatient(JSON.stringify(patient));
-    addRowToTable(firstName, lastName, id, age, mobile, email, company);
+    /* addRowToTable(firstName, lastName, id, age, mobile, email, company); */
   }
   clearPatientDetails();
   openAddPatientSection();

@@ -1,180 +1,224 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Patients List</title>
+    <link rel="stylesheet" type="text/css" href="css/patients_list.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Patients List</title>
-  <link rel="stylesheet" type="text/css" href="css/patients_list.css" />
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet" />
-</head>
-
-<body>
-  <div class="sidebar-container">
-    <div class="imgcontainer">
-      <img src="img/logo.png" alt="Avatar" class="avatar" />
+  <body>
+    <div class="sidebar-container">
+      <div class="imgcontainer">
+        <img src="img/logo.png" alt="Avatar" class="avatar" />
+      </div>
+      <ul class="sidebar-navigation">
+        <li class="header">Navigation</li>
+        <li>
+          <a href="index.html">
+            <i class="fa fa-home" aria-hidden="true"></i> Home
+          </a>
+        </li>
+        <li class="header">Menu</li>
+        <li>
+          <a href="patients_list.html">
+            <i class="fa fa-users" aria-hidden="true"></i> Patients
+          </a>
+        </li>
+        <li>
+          <a href="procedures_list.html">
+            <i class="fa fa-cog" aria-hidden="true"></i> Procedures and
+            Treatments
+          </a>
+        </li>
+        <li class="header">Tools</li>
+        <li>
+          <a href="Calculator.html">
+            <i class="fa fa-users" aria-hidden="true"></i> IOL Calculator
+          </a>
+        </li>
+        <li class="header">Documents</li>
+        <li>
+          <a href="#">
+            <i class="fa fa-users" aria-hidden="true"></i> Clinical Documents
+          </a>
+        </li>
+        <li>
+          <a href="#"> <i class="fa fa-users" aria-hidden="true"></i> Notes </a>
+        </li>
+      </ul>
     </div>
-    <ul class="sidebar-navigation">
-      <li class="header">Navigation</li>
-      <li>
-        <a href="index.html">
-          <i class="fa fa-home" aria-hidden="true"></i> Home
-        </a>
-      </li>
-      <li class="header">Menu</li>
-      <li>
-        <a href="patients_list.html">
-          <i class="fa fa-users" aria-hidden="true"></i> Patients
-        </a>
-      </li>
-      <li>
-        <a href="procedures_list.html">
-          <i class="fa fa-cog" aria-hidden="true"></i> Procedures and
-          Treatments
-        </a>
-      </li>
-      <li class="header">Tools</li>
-      <li>
-        <a href="Calculator.html">
-          <i class="fa fa-users" aria-hidden="true"></i> IOL Calculator
-        </a>
-      </li>
-      <li class="header">Documents</li>
-      <li>
-        <a href="#">
-          <i class="fa fa-users" aria-hidden="true"></i> Clinical Documents
-        </a>
-      </li>
-      <li>
-        <a href="#"> <i class="fa fa-users" aria-hidden="true"></i> Notes </a>
-      </li>
-    </ul>
-  </div>
 
-  <div class="content-container">
-    <div class="container-fluid" id="patientsList">
-      <h1>Patients List</h1>
-      <div class="limiter">
-        <div class="container-table100">
-          <div class="wrap-table100">
-            <div id="mainDiv" class="table">
-              <div class="row header">
-                <div class="cell">
-                  First Name
-                </div>
-                <div class="cell">
-                  Last Name
-                </div>
-                <div class="cell">
-                  ID
-                </div>
-                <div class="cell">
-                  Age
-                </div>
-                <div class="cell">
-                  Mobile
-                </div>
-                <div class="cell">
-                  E-mail
-                </div>
-                <div class="cell">
-                  Health Insurance
+    <div class="content-container">
+      <div class="container-fluid" id="patientsList">
+        <h1>Patients List</h1>
+        <div class="limiter">
+          <div class="container-table100">
+            <div class="wrap-table100">
+              <div id="mainDiv" class="table">
+                <div class="row header">
+                  <div class="cell">
+                    First Name
+                  </div>
+                  <div class="cell">
+                    Last Name
+                  </div>
+                  <div class="cell">
+                    ID
+                  </div>
+                  <div class="cell">
+                    Age
+                  </div>
+                  <div class="cell">
+                    Mobile
+                  </div>
+                  <div class="cell">
+                    E-mail
+                  </div>
+                  <div class="cell">
+                    Health Insurance
+                  </div>
                 </div>
               </div>
             </div>
+            <button
+              onclick="openAddPatientSection()"
+              class="primary-btn print header-btn text-uppercase mt-10"
+            >
+              Add New Patient
+            </button>
           </div>
-          <button onclick="openAddPatientSection()" class="primary-btn print header-btn text-uppercase mt-10">
+        </div>
+      </div>
+
+      <div class="container-fluid" id="addPatientDiv" style="display: none;">
+        <h1>Patient demographic file</h1>
+        <div class="patients">
+          <label class="name">Full name</label>
+          <input
+            id="name"
+            placeholder="first name"
+            pattern="[a-zA-Z]+"
+            oninvalid="setCustomValidity('Please enter on alphabets only. ')"
+            type="text"
+          />
+          <input id="lastName" type="last" placeholder="last name" />
+          <label class="id">ID</label>
+          <input
+            id="id"
+            type="number"
+            pattern="[A-Za-z]{3}"
+            title="9 numbers"
+            maxlength="9"
+            placeholder="id"
+            required
+          />
+          <br />
+          <label class="gender">Gender</label>
+          <select id="gender" type="gender" placeholder="gender">
+            <option value="" disabled selected>gender</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Non-binary">Non-binary</option>
+          </select>
+          <br />
+
+          <label class="bday">Birthday</label>
+          <input id="bday" type="date" placeholder="birthday" />
+
+          <label class="age">Age</label>
+          <input id="age" type="age" placeholder="age" />
+          <br />
+          <label class="health_m">Health insurance company</label>
+          <select id="health_m">
+            <option value="" disabled selected>Select company</option>
+            <option value="Clalit Health Services"
+              >Clalit Health Services</option
+            >
+            <option value="Maccabi Health Services"
+              >Maccabi Health Services</option
+            >
+            <option value="Meuhedet Health Services"
+              >Meuhedet Health Services</option
+            >
+            <option value="Leumit Health Services"
+              >Leumit Health Services</option
+            >
+            <option value="Harel Insurance Company"
+              >Harel Insurance Company</option
+            >
+            <option value="Clal Insurance Company"
+              >Clal Insurance Company</option
+            >
+            <option value="Menorah Insurance Company"
+              >Menorah Insurance Company</option
+            >
+          </select>
+
+          <label class="pnum">Policy number</label>
+          <input id="pnum" type="pnum" placeholder="policy number" />
+
+          <br />
+          <label class="vuntil">Valid until</label>
+          <input id="vuntil" type="date" placeholder="date" />
+          <br />
+          <label class="mobile">Mobile number</label>
+          <input id="mobile" type="mobile" placeholder="mobile number" />
+          <input
+            id="mobile2"
+            type="mobile"
+            placeholder="mobile number"
+            display="inline"
+          />
+          <br />
+          <label class="fax">Fax number</label>
+          <input id="fax" type="number" placeholder="fax number" />
+          <label class="email">Email address</label>
+          <input type="email" id="email" placeholder="email" />
+          <br />
+          <label for="country">Country</label>
+          <select
+            id="country"
+            class="country"
+            name="country"
+            placeholder="country"
+          >
+            <option value="" disabled selected>Select country</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Åland Islands">Åland Islands</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="American Samoa">American Samoa</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+            <option value="Anguilla">Anguilla</option>
+            <option value="Antarctica">Antarctica</option>
+          </select>
+
+          <label class="city">City</label>
+          <input id="city" type="city" placeholder="city" />
+          <br />
+          <label class="location_address">Address</label>
+          <input id="address" type="address" placeholder="address" />
+          <label class="zip">Zip code</label>
+          <input id="zip" type="zip" placeholder="zip code" />
+        </div>
+        <br />
+        <div class="wrapper">
+          <button
+            onclick="addNewPatient()"
+            class="primary-btn print header-btn text-uppercase mt-10"
+          >
             Add New Patient
           </button>
         </div>
       </div>
     </div>
-
-    <div class="container-fluid" id="addPatientDiv" style="display: none;">
-      <h1>Patient demographic file</h1>
-      <div class="patients">
-        <label class="name">Full name</label>
-        <input id="name" placeholder="first name" pattern="[a-zA-Z]+"
-          oninvalid="setCustomValidity('Please enter on alphabets only. ')" type="text" />
-        <input id="lastName" type="last" placeholder="last name" />
-        <label class="id">ID</label>
-        <input id="id" type="number" pattern="[A-Za-z]{3}" title="9 numbers" maxlength="9" placeholder="id" required />
-        <br />
-        <label class="gender">Gender</label>
-        <select id="gender" type="gender" placeholder="gender">
-          <option value="" disabled selected>gender</option>
-          <option value="Female">Female</option>
-          <option value="Male">Male</option>
-          <option value="Non-binary">Non-binary</option>
-        </select>
-        <br />
-
-        <label class="bday">Birthday</label>
-        <input id="bday" type="date" placeholder="birthday" />
-
-        <label class="age">Age</label>
-        <input id="age" type="age" placeholder="age" />
-        <br />
-        <label class="health_m">Health insurance company</label>
-        <select id="health_m">
-          <option value="" disabled selected>Select company</option>
-          <option value="1">Clalit Health Services</option>
-          <option value="2">Maccabi Health Services</option>
-          <option value="3">Meuhedet Health Services</option>
-          <option value="4">Leumit Health Services</option>
-          <option value="4">Harel Insurance Company</option>
-          <option value="4">Clal Insurance Company</option>
-          <option value="4">Menorah Insurance Company</option>
-        </select>
-
-        <label class="pnum">Policy number</label>
-        <input id="pnum" type="pnum" placeholder="policy number" />
-
-        <br />
-        <label class="vuntil">Valid until</label>
-        <input id="vuntil" type="date" placeholder="date" />
-        <br />
-        <label class="mobile">Mobile number</label>
-        <input id="mobile" type="mobile" placeholder="mobile number" />
-        <input id="mobile2" type="mobile" placeholder="mobile number" display="inline" />
-        <br />
-        <label class="fax">Fax number</label>
-        <input id="fax" type="number" placeholder="fax number" />
-        <label class="email">Email address</label>
-        <input type="email" id="email" placeholder="email" />
-        <br />
-        <label for="country">Country</label>
-        <select id="country" class="country" name="country" placeholder="country">
-          <option value="" disabled selected>Select country</option>
-          <option value="Afghanistan">Afghanistan</option>
-          <option value="Åland Islands">Åland Islands</option>
-          <option value="Albania">Albania</option>
-          <option value="Algeria">Algeria</option>
-          <option value="American Samoa">American Samoa</option>
-          <option value="Andorra">Andorra</option>
-          <option value="Angola">Angola</option>
-          <option value="Anguilla">Anguilla</option>
-          <option value="Antarctica">Antarctica</option>
-        </select>
-
-        <label class="city">City</label>
-        <input id="city" type="city" placeholder="city" />
-        <br />
-        <label class="location_address">Address</label>
-        <input id="address" type="address" placeholder="address" />
-        <label class="zip">Zip code</label>
-        <input id="zip" type="zip" placeholder="zip code" />
-      </div>
-      <br />
-      <div class="wrapper">
-        <button onclick="addNewPatient()" class="primary-btn print header-btn text-uppercase mt-10">
-          Add New Patient
-        </button>
-      </div>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>
 
 <script src="./javaScript/patientsDetails.js"></script>

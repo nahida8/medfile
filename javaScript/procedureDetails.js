@@ -1,3 +1,4 @@
+// not finished yet.
 function addNewProcedure() {
   var name = document.getElementById("name").value;
   var id = document.getElementById("id").value;
@@ -59,3 +60,11 @@ function addNewProcedure() {
   console.log(PlannedProcedure);
   console.log(Location);
 }
+const getProcedures = async () => {
+  const response = await fetch(
+    "http://localhost:3000/api/Patients/getProcedures"
+  );
+  const procedureRes = await response.json(); //extract JSON from the http response
+
+  return procedureRes;
+};
