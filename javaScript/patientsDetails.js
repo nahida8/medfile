@@ -90,6 +90,7 @@ const addPatient = async (patient) => {
 
 //DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO DEMO
 const addDemo = async (demoDetails) => {
+  console.log(demoDetails);
   const response = await fetch("http://localhost:3000/api/Patients/addDemo", {
     method: "POST",
     body: demoDetails, // string or object
